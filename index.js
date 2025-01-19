@@ -27,7 +27,7 @@ function challenge2(array) {
 let array_c2 = [1, 2, 3, 4];
 array = challenge2(array_c2);
 console.log("\nChallenge 2:\n");
-console.log(array_c2);
+console.log(array);
 
 //Challange 3
 function challange3(students) {
@@ -90,10 +90,23 @@ function challenge6(votes) {
     }
   }
   if (a > b && a > c) {
-    return "A is the winner";
+    return "A is the winner.";
   } else if (c > a && c > b) {
-    return "C is the winner";
+    return "C is the winner.";
   } else {
-    if (a == b) return "B is the winner";
+    if (a == b && a == c) {
+      return "This vote results in a Draw.";
+    } else if (a == b && a > c) {
+      return "A and B are both the winners.";
+    } else if (a == c && a > b) {
+      return "A and C are both the winners.";
+    } else if (c == b && c > a) {
+      return "C and B are both the winners.";
+    } else {
+      return "B is the winner.";
+    }
   }
 }
+
+let votes = ["A", "A", "B", "B", "C", "C"];
+console.log("\nChallenge 6:\n" + challenge6(votes));
